@@ -19,18 +19,29 @@ public class MainActivity extends AppCompatActivity {
 
         Button rollbutton;
         rollbutton = findViewById(R.id.roll_button);
-        ImageView leftdice = findViewById(R.id.image_leftdice);
-        ImageView rightdice = findViewById(R.id.image_rightdice);
+        final ImageView leftdice = findViewById(R.id.image_leftdice);
+        final ImageView rightdice = findViewById(R.id.image_rightdice);
+
+        final int[] diceArray = new int[]{
+                R.drawable.dice1,
+                R.drawable.dice2,
+                R.drawable.dice3,
+                R.drawable.dice4,
+                R.drawable.dice5,
+                R.drawable.dice6};
 
         rollbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Dicee", "button pressed)");
 
                 Random randomNumberGenerator = new Random();
                 int number = randomNumberGenerator.nextInt(6);
-                Log.d("Dicee", "The random number is " +number);
+                int number2 = randomNumberGenerator.nextInt(6);
+                Log.d("Dicee", "The first random number is " +number);
+                Log.d("Dicee", "The second random number is " +number2);
 
+                leftdice.setImageResource(diceArray[number]);
+                rightdice.setImageResource(diceArray[number2]);
             }
         });
 

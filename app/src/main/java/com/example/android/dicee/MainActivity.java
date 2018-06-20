@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button rollbutton;
-        rollbutton = findViewById(R.id.roll_button);
-        final ImageView leftdice = findViewById(R.id.image_leftdice);
-        final ImageView rightdice = findViewById(R.id.image_rightdice);
+        rollbutton = findViewById(R.id.rollButton);
+        final ImageView leftdice = findViewById(R.id.image_leftDice);
+        final ImageView rightdice = findViewById(R.id.image_rightDice);
 
         final int[] diceArray = new int[]{
                 R.drawable.dice1,
@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.dice3,
                 R.drawable.dice4,
                 R.drawable.dice5,
-                R.drawable.dice6};
+                R.drawable.dice6
+        };
 
         rollbutton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -6,64 +6,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/newbackground"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="25dp">
 
     <ImageView
         android:id="@+id/image_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="195dp"
-
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintRight_toLeftOf="@id/guideline5"
+        app:layout_constraintLeft_toRightOf="@id/guideline4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dicee_logo" />
+
+
+        app:srcCompat="@drawable/dicee_logo"
+        />
 
 
     <ImageView
         android:id="@+id/image_leftDice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        app:layout_constraintTop_toBottomOf="@id/image_rightDice"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/dice2" />
 
     <ImageView
         android:id="@+id/image_rightDice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        
+
+
+        app:layout_constraintBottom_toTopOf="@+id/image_leftDice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/dice1" />
 
 
     <Button
         android:id="@+id/rollButton"
         style="@style/Base.Widget.AppCompat.Button.Colored"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
         android:contentDescription="@string/description_button"
         android:text="@string/button_text"
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline"
+        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent=".85" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.09975669" />
+        app:layout_constraintGuide_percent=".05" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".40" />
 
 </android.support.constraint.ConstraintLayout>
